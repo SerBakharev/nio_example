@@ -43,13 +43,13 @@ public class SelectorServerExample {
                     SocketChannel clientChannel = serverChannel.accept();
                     clientChannel.configureBlocking(false);
                     clientChannel.register(selector, SelectionKey.OP_READ);
-                    System.out.println("РќРѕРІРѕРµ РїРѕРґРєР»СЋС‡РµРЅРёРµ: " + clientChannel);
+                    System.out.println("Новое подключение: " + clientChannel);
                 } else if (key.isReadable()) {
                     SocketChannel channel = (SocketChannel) key.channel();
                     ByteBuffer buffer = ByteBuffer.allocate(1024);
                     channel.read(buffer);
                     String message = new String(buffer.array()).trim();
-                    System.out.println("РџРѕР»СѓС‡РµРЅРѕ СЃРѕРѕР±С‰РµРЅРёРµ РѕС‚ " + channel + ": " + message);
+                    System.out.println("Получено сообщение от " + channel + ": " + message);
                 }
                 keyIterator.remove();
             }

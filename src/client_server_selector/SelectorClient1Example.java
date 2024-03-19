@@ -14,7 +14,7 @@ public class SelectorClient1Example {
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.print("Р’РІРµРґРёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ РґР»СЏ РѕС‚РїСЂР°РІРєРё РЅР° СЃРµСЂРІРµСЂ: ");
+            System.out.print("Введите сообщение для отправки на сервер: ");
             String message = scanner.nextLine();
             if ("exit".equals(message)) {
                 break;

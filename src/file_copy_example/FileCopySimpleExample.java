@@ -8,6 +8,7 @@ import java.nio.file.StandardOpenOption;
 
 public class FileCopySimpleExample {
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         Path inputPath = Path.of("src/file_copy_example/input.txt");
         Path outputPath = Path.of("src/file_copy_example/output.txt");
 
@@ -25,5 +26,8 @@ public class FileCopySimpleExample {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        long finish = System.currentTimeMillis();
+        long result = finish - start;
+        System.out.println(result);
     }
 }
